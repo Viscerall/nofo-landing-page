@@ -51,7 +51,7 @@ const TeamSection = () => {
       name: "Daffa Ari Nabighah",
       role: "Head of Field Control",
       bio: "Food scientist with a passion for freshness and quality control.",
-      image: "/omdapuks.jpg", 
+      image: "omdapuks.jpg", 
     },
   ];
 

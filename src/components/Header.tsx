@@ -52,7 +52,7 @@ const Header = () => {
               // PERUBAHAN DISINI:
               // Jika scroll (background putih) -> favicon.ico (Hijau)
               // Jika di atas (transparan) -> logoputih.png (Putih)
-              src={isScrolled ? "/favicon.ico" : "/logoputih.png"} 
+              src={isScrolled ? "favicon.ico" : "logoputih.png"} 
               alt="Logo NOFO" 
               className="w-8 h-8 sm:w-10 sm:h-10 object-contain transition-all duration-300" 
             />
