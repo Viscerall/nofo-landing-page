@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* NOFO Earth-Tone Design System */
+    --background: 40 30% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 95%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 30% 97%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Forest Green - Primary Brand Color */
+    --primary: 142 35% 28%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Warm Sand - Secondary */
+    --secondary: 35 30% 90%;
+    --secondary-foreground: 30 10% 20%;
+
+    /* Muted Sage */
+    --muted: 140 15% 92%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Terracotta Accent */
+    --accent: 18 50% 55%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 30% 97%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 142 35% 28%;
+
+    --radius: 0.75rem;
+
+    /* Custom NOFO Colors */
+    --nofo-forest: 142 35% 28%;
+    --nofo-sage: 140 25% 75%;
+    --nofo-sand: 35 30% 90%;
+    --nofo-cream: 40 30% 97%;
+    --nofo-terracotta: 18 50% 55%;
+    --nofo-brown: 30 25% 35%;
+    --nofo-charcoal: 30 10% 15%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 35% 28% / 0.95), hsl(142 40% 22% / 0.98));
+    --gradient-card: linear-gradient(180deg, hsl(40 30% 97%), hsl(40 25% 94%));
+    --gradient-accent: linear-gradient(135deg, hsl(18 50% 55%), hsl(18 55% 48%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(30 10% 15% / 0.04);
+    --shadow-md: 0 4px 16px hsl(30 10% 15% / 0.06);
+    --shadow-lg: 0 8px 32px hsl(30 10% 15% / 0.08);
+    --shadow-glow: 0 0 40px hsl(142 35% 28% / 0.15);
+
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 30 10% 15%;
+    --sidebar-primary: 142 35% 28%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 35 30% 90%;
+    --sidebar-accent-foreground: 30 10% 20%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 142 35% 28%;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 40 20% 92%;
+
+    --card: 30 12% 14%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 30 15% 10%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 142 40% 45%;
+    --primary-foreground: 30 15% 10%;
+
+    --secondary: 30 12% 18%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 30 12% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 18 50% 55%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 20% 92%;
+
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 142 40% 45%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 142 40% 45%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 12% 18%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 30 12% 20%;
+    --sidebar-ring: 142 40% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .nofo-section {
+    @apply py-16 sm:py-20 md:py-28 lg:py-36 xl:py-40 px-4 sm:px-6 md:px-10 lg:px-16;
+  }
+
+  .nofo-section-compact {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-10 lg:px-16;
+  }
+
+  .nofo-container {
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  .nofo-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+  }
+
+  .nofo-subheading {
+    @apply text-lg sm:text-xl md:text-2xl font-medium;
+  }
+
+  .nofo-body {
+    @apply text-sm sm:text-base md:text-lg leading-relaxed;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .nofo-card {
+    @apply rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-300;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nofo-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  @media (min-width: 640px) {
+    .nofo-card:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
