@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
 
-  base: "/nofo-landing-page", 
+  base: "/nofo-landing-page/", 
   
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
