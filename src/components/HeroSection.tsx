@@ -10,27 +10,29 @@ const HeroSection = () => {
   // WhatsApp Config
   const whatsappNumber = "6285122969330";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Halo NOFO, saya tertarik untuk membeli produk berkelanjutan (Sustainable Product) Anda. Boleh minta katalognya?"
+    "Hello NOFO, I am interested in your sustainable products. Could you please provide a catalog or price list?"
   )}`;
 
-  // Form State untuk Partnership
+  // Partnership Form State
   const [formData, setFormData] = useState({
-    nama: "",
+    name: "",
     email: "",
-    komoditas: "",
-    kuantitas: ""
+    phone: "",
+    commodity: "",
+    quantity: ""
   });
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent("Partnership Inquiry - NOFO Hero Section");
+    const subject = encodeURIComponent("Partnership Inquiry - Hero Section");
     const body = encodeURIComponent(
-      `Halo Tim NOFO,\n\nSaya tertarik menjadi partner melalui website. Berikut data saya:\n\n` +
-      `Nama: ${formData.nama}\n` +
-      `Email: ${formData.email}\n` +
-      `Komoditas: ${formData.komoditas}\n` +
-      `Kuantitas: ${formData.kuantitas}\n\n` +
-      `Mohon segera hubungi saya.`
+      `Dear NOFO Team,\n\nI am interested in exploring a partnership opportunity. Here are my details:\n\n` +
+      `Full Name: ${formData.name}\n` +
+      `Email Address: ${formData.email}\n` +
+      `Phone Number: ${formData.phone}\n` +
+      `Commodity: ${formData.commodity}\n` +
+      `Estimated Weekly Quantity: ${formData.quantity}\n\n` +
+      `I look forward to hearing from you soon.`
     );
     window.location.href = `mailto:nofoagri@gmail.com?subject=${subject}&body=${body}`;
     setIsFormOpen(false);
@@ -64,7 +66,7 @@ const HeroSection = () => {
               className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
             >
               <Leaf className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-nofo-sage" />
-              <span className="text-xs sm:text-sm font-medium text-primary-foreground/90">
+              <span className="text-xs sm:text-sm font-medium text-primary-foreground/90 uppercase tracking-wider">
                 Sustainable Agribusiness
               </span>
             </motion.div>
@@ -140,25 +142,9 @@ const HeroSection = () => {
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="hidden sm:block absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-5 h-8 sm:w-6 sm:h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-1.5 sm:p-2">
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-primary-foreground/60"
-            />
-          </div>
-        </motion.div>
       </section>
 
-      {/* MODAL FORM PARTNERSHIP (Sama seperti di Header) */}
+      {/* PARTNERSHIP MODAL (English Version) */}
       <AnimatePresence>
         {isFormOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
@@ -168,28 +154,38 @@ const HeroSection = () => {
               exit={{ scale: 0.9, opacity: 0 }}
               className="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl border border-border"
             >
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-nofo-forest">Partner With Us</h3>
-                <button onClick={() => setIsFormOpen(false)}><X className="w-5 h-5 text-muted-foreground hover:text-red-500" /></button>
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-2xl font-bold text-nofo-forest">Partner With Us</h3>
+                <button onClick={() => setIsFormOpen(false)} aria-label="Close modal">
+                  <X className="w-6 h-6 text-muted-foreground hover:text-red-500" />
+                </button>
               </div>
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
-                  <label className="text-sm font-semibold text-nofo-forest mb-1 block">Nama Lengkap</label>
-                  <input required type="text" className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, nama: e.target.value})} />
+                  <label className="text-sm font-semibold text-nofo-forest mb-1 block">Full Name</label>
+                  <input required type="text" placeholder="John Doe" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, name: e.target.value})} />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-semibold text-nofo-forest mb-1 block">Email</label>
+                    <input required type="email" placeholder="john@example.com" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                  </div>
+                  <div>
+                    <label className="text-sm font-semibold text-nofo-forest mb-1 block">Phone Number</label>
+                    <input required type="tel" placeholder="+62..." className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, phone: e.target.value})} />
+                  </div>
                 </div>
                 <div>
-                  <label className="text-sm font-semibold text-nofo-forest mb-1 block">Email</label>
-                  <input required type="email" className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                  <label className="text-sm font-semibold text-nofo-forest mb-1 block">Commodity Type</label>
+                  <input required type="text" placeholder="e.g. Chili, Corn, etc." className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, commodity: e.target.value})} />
                 </div>
                 <div>
-                  <label className="text-sm font-semibold text-nofo-forest mb-1 block">Komoditas</label>
-                  <input required type="text" placeholder="Cabai, Kentang, dll" className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, komoditas: e.target.value})} />
+                  <label className="text-sm font-semibold text-nofo-forest mb-1 block">Weekly Quantity</label>
+                  <input required type="text" placeholder="e.g. 500kg or 2 Tons" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, quantity: e.target.value})} />
                 </div>
-                <div>
-                  <label className="text-sm font-semibold text-nofo-forest mb-1 block">Kuantitas per Minggu</label>
-                  <input required type="text" placeholder="100 kg / 1 Ton" className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-nofo-sage outline-none" onChange={(e) => setFormData({...formData, kuantitas: e.target.value})} />
-                </div>
-                <Button type="submit" className="w-full bg-nofo-forest hover:bg-nofo-forest/90 text-white py-6">Kirim Inquiry via Email</Button>
+                <Button type="submit" className="w-full bg-nofo-forest hover:bg-nofo-forest/90 text-white py-6 text-lg">
+                  Submit Partnership Inquiry
+                </Button>
               </form>
             </motion.div>
           </div>
