@@ -38,14 +38,14 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 xl:gap-16">
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-3 sm:mb-4">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center">
-                <img
-                  src="logoputih.png"
-                  alt="Logo NOFO"
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
-              </div>
-              <span className="font-display text-lg sm:text-xl font-semibold text-nofo-cream">
+            <a href="#" className="flex items-center gap-3 mb-4 sm:mb-6">
+              {/* Logo Tanpa Background Hijau */}
+              <img
+                src="logoputih.png"
+                alt="Logo NOFO"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain" 
+              />
+              <span className="font-display text-xl sm:text-2xl font-semibold text-nofo-cream tracking-tight">
                 NOFO
               </span>
             </a>
