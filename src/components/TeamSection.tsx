@@ -30,28 +30,28 @@ const TeamSection = () => {
 
   const coreTeam = [
     {
-      name: "Muhammad Dzaky Andifitra",
+      name: "NaN", /* Muhammad Dzaky Andifitra*/
       role: "Head of Marketing",
-      bio: "15+ years in supply chain optimization, now dedicated to building efficient networks.",
+      bio: "NaN", /* 15+ years in supply chain optimization, now dedicated to building efficient networks.*/
       image: "/placeholder.svg",
     },
     {
-      name: "Muhammad Tristan Prasetyo",
+      name: "NaN", /* Muhammad Tristan Prasetyo */
       role: "Head of Business Strategy",
-      bio: "Environmental policy expert ensuring global sustainability standards.",
+      bio: "NaN", /* Environmental policy expert ensuring global sustainability standards. */
       image: "/placeholder.svg",
     },
     {
-      name: "Farrel Putra Rizfara",
+      name: "NaN", /*Farrel Putra Rizfara */
       role: "Creative Director",
-      bio: "Building fair, long-term relationships with farming communities.",
+      bio: "NaN", /* Building fair, long-term relationships with farming communities. */
       image: "/placeholder.svg",
     },
     {
-      name: "Daffa Ari Nabighah",
+      name: "NaN", /* Daffa Ari Nabighah */
       role: "Head of Field Control",
-      bio: "Food scientist with a passion for freshness and quality control.",
-      image: "omdapuks.jpg", 
+      bio: "NaN", /*  Food scientist with a passion for freshness and quality control. */
+      image: "/placeholder.svg", /* omdapuks.jpg */ 
     },
   ];
 
@@ -160,7 +160,7 @@ const TeamSection = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> 
       </div>
     </section>
   );
